@@ -68,3 +68,6 @@ typings/
 # npm package lock
 package-lock.json
 
+# TypeScript output
+dist/
+
