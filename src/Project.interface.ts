@@ -24,7 +24,7 @@ export module Create {
         /**
          * Merchant ID
          */
-        merchant_id: number;
+        merchant_id?: number;
 
         /**
          * Short project name for reports.

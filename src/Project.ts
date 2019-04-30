@@ -8,7 +8,7 @@ export default class Project extends Xsolla {
      * Create a project.
      */
     public create(data: Create.input): AxiosPromise<Create.response> {
-        return this.client.post(`/merchants/${this.credentials.merchantId}/projects`,{
+        return this.client.post(`/merchants/${data.merchant_id || this.credentials.merchantId}/projects`,{
             method: 'POST',
             data,
         })
