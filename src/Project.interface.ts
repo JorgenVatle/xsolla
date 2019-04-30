@@ -143,7 +143,7 @@ export module Create {
 }
 
 /**
- * Get Project
+ * Get a Project
  *
  * @link https://developers.xsolla.com/api/v2/publisher-account/#api_projects_get_project
  */
@@ -159,5 +159,18 @@ export module Get {
     }
 
     export interface response extends Create.input {}
+
+}
+
+/**
+ * Update a Project
+ *
+ * @link https://developers.xsolla.com/api/v2/publisher-account/#api_projects_update_project
+ */
+export module Update {
+
+    export interface input extends Create.input {}
+
+    export type response = undefined;
 
 }
