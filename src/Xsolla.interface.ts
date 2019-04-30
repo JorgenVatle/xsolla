@@ -3,7 +3,7 @@ export interface XsollaMerchantCredentials {
     /**
      * Xsolla merchant ID
      */
-    merchantId: string;
+    merchantId: string | number;
 
     /**
      * Xsolla Merchant API Key
@@ -17,7 +17,7 @@ export interface XsollaProjectCredentials {
     /**
      * Xsolla Merchant ID
      */
-    merchantId: string;
+    merchantId: string | number;
 
     /**
      * Xsolla Project ID
