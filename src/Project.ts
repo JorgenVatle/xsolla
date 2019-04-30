@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios';
-import { Create } from './Project.interface';
+import { Create, Get } from './Project.interface';
 import Xsolla from './Xsolla';
 
 export default class Project extends Xsolla {
@@ -12,5 +12,12 @@ export default class Project extends Xsolla {
             method: 'POST',
             data,
         })
+    }
+
+    /**
+     * Get a single project by ID.
+     */
+    public get(data: Get.input): AxiosPromise<Get.response> {
+        return this.client.get(`/projects/${data.project_id}`);
     }
 }
