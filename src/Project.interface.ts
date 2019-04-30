@@ -169,7 +169,14 @@ export module Get {
  */
 export module Update {
 
-    export interface input extends Create.input {}
+    export interface input extends Create.input {
+
+        /**
+         * Project ID
+         */
+        project_id: number;
+
+    }
 
     export type response = undefined;
 
