@@ -19,6 +19,7 @@ export default class Xsolla {
     public constructor(credentials: XsollaMerchantCredentials) {
         this.credentials = credentials;
         this.client = Axios.create({
+            baseURL: `https://api.xsolla.com/merchant/v2/merchants/${credentials.merchantId}/`,
             auth: {
                 username: credentials.merchantId,
                 password: credentials.apiKey,
