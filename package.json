@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/JorgenVatle/xsolla/issues"
   },
-  "homepage": "https://github.com/JorgenVatle/xsolla#readme"
+  "homepage": "https://github.com/JorgenVatle/xsolla#readme",
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
 }
