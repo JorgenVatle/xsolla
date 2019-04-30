@@ -11,12 +11,14 @@ interface PaymentModule {
     custom_name: string[];
 
 }
-
+/**
+ * Create a project.
+ *
+ * @link https://developers.xsolla.com/api/v2/publisher-account/#api_projects_create_project
+ */
 export module Create {
     /**
-     * Create a project.
-     *
-     * @link https://developers.xsolla.com/api/v2/publisher-account/#api_projects_create_project
+     * Request input
      */
     export interface post {
         /**
