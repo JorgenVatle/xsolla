@@ -6,7 +6,7 @@ export default class Xsolla {
     /**
      * Xsolla merchant credentials.
      */
-    protected readonly merchantId: XsollaMerchantCredentials['merchantId'];
+    private readonly credentials: XsollaMerchantCredentials;
 
     /**
      * REST client
@@ -16,14 +16,14 @@ export default class Xsolla {
     /**
      * Xsolla constructor
      */
-    public constructor({ merchantId, apiKey }: XsollaMerchantCredentials) {
-        this.merchantId = merchantId;
+    public constructor(credentials: XsollaMerchantCredentials) {
+        this.credentials = credentials;
 
         this.client = Axios.create({
             baseURL: `https://api.xsolla.com/merchant/v2/`,
             auth: {
-                username: merchantId,
-                password: apiKey,
+                username: credentials.merchantId,
+                password: credentials.apiKey,
             }
         });
     }
