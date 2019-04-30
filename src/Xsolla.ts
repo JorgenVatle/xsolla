@@ -1,4 +1,4 @@
-import { XsollaMerchantCredentials, XsollaProjectCredentials } from './Xsolla.interface';
+import { XsollaMerchantCredentials } from './Xsolla.interface';
 import Axios, { AxiosInstance } from 'axios';
 
 export default class Xsolla {
