@@ -6,7 +6,7 @@ export default class Xsolla {
     /**
      * Xsolla merchant credentials.
      */
-    private readonly credentials: XsollaMerchantCredentials;
+    protected readonly credentials: XsollaMerchantCredentials;
 
     /**
      * REST client
