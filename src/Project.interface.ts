@@ -154,7 +154,7 @@ export module Get {
         /**
          * Project ID
          */
-        project_id: string;
+        project_id: number | string;
 
     }
 
