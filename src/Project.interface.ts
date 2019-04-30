@@ -141,3 +141,23 @@ export module Create {
 
     }
 }
+
+/**
+ * Get Project
+ *
+ * @link https://developers.xsolla.com/api/v2/publisher-account/#api_projects_get_project
+ */
+export module Get {
+
+    export interface input {
+
+        /**
+         * Project ID
+         */
+        project_id: string;
+
+    }
+
+    export interface response extends Create.input {}
+
+}
