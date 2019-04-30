@@ -131,4 +131,13 @@ export module Create {
 
         }
     }
+
+    export interface response {
+
+        /**
+         * Project ID
+         */
+        id: number;
+
+    }
 }
