@@ -1,5 +1,6 @@
 import { XsollaMerchantCredentials } from './Xsolla.interface';
 import Axios, { AxiosInstance } from 'axios';
+import Project from './Project';
 
 export default class Xsolla {
 
@@ -26,6 +27,13 @@ export default class Xsolla {
                 password: credentials.apiKey,
             }
         });
+    }
+
+    /**
+     * Xsolla Project instance.
+     */
+    public get project() {
+        return new Project(this.credentials);
     }
 
 }
