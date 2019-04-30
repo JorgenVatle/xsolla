@@ -1,28 +1,14 @@
-import Axios, { AxiosInstance, AxiosPromise } from 'axios';
+import { AxiosPromise } from 'axios';
 import { Create } from './Project.interface';
+import Xsolla from './Xsolla';
 
-export default class Project {
-
-    /**
-     * REST client.
-     */
-    protected client: AxiosInstance;
-
-    /**
-     * Xsolla project constructor.
-     */
-    public constructor(client: AxiosInstance) {
-        this.client = Axios.create({
-            ...client.defaults,
-            baseURL: client.defaults.baseURL + 'projects'
-        });
-    }
+export default class Project extends Xsolla {
 
     /**
      * Create a project.
      */
     public create(data: Create.input): AxiosPromise<Create.response> {
-        return this.client.request({
+        return this.client.post(`/merchants/${this.credentials.merchantId}/projects`,{
             method: 'POST',
             data,
         })
