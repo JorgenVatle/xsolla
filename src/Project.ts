@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios';
-import { Create, Get } from './Project.interface';
+import { Create, Get, Update } from './Project.interface';
 import Xsolla from './Xsolla';
 
 export default class Project extends Xsolla {
@@ -19,5 +19,13 @@ export default class Project extends Xsolla {
      */
     public get(data: Get.input): AxiosPromise<Get.response> {
         return this.client.get(`/projects/${data.project_id}`);
+    }
+
+
+    /**
+     * Update a project.
+     */
+    public update(data: Update.input): AxiosPromise<Update.response> {
+        return this.client.put(`/projects/${data.project_id}`, data);
     }
 }
