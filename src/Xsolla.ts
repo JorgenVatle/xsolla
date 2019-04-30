@@ -20,7 +20,7 @@ export default class Xsolla {
         this.merchantId = merchantId;
 
         this.client = Axios.create({
-            baseURL: `https://api.xsolla.com/merchant/v2/merchants/${merchantId}/`,
+            baseURL: `https://api.xsolla.com/merchant/v2/`,
             auth: {
                 username: merchantId,
                 password: apiKey,
