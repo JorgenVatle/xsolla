@@ -14,7 +14,8 @@
     "Xsolla",
     "SDK",
     "REST",
-    "client"
+    "client",
+    "typescript"
   ],
   "author": "Jørgen <Jorgen@WcAServices.net> (https://github.com/JorgenVatle)",
   "license": "ISC",
