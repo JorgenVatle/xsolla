@@ -20,7 +20,7 @@ export module Create {
     /**
      * Request input
      */
-    export interface post {
+    export interface input {
         /**
          * Merchant ID
          */
