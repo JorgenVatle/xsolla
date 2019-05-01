@@ -63,6 +63,17 @@ export default interface PaymentSettings  {
         theme: 'default' | 'default_dark';
 
         /**
+         * Device type.
+         */
+        version: 'desktop' | 'mobile';
+
+        /**
+         * Link to the EULA.
+         */
+        license_url: string;
+
+
+        /**
          * Payment UI size.
          */
         size:
@@ -82,10 +93,6 @@ export default interface PaymentSettings  {
              */
             | 'large';
 
-        /**
-         * Device type.
-         */
-        version: 'desktop' | 'mobile';
 
         header: {
 
