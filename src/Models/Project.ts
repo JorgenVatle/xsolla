@@ -1,7 +1,10 @@
 import Model from './Model';
-import { CreateToken, Update } from '../Interfaces/Project.interface';
+import { CreateToken, Get, Update } from '../Interfaces/Project.interface';
 
 export default class Project extends Model {
+
+    // @ts-ignore
+    protected data: Get.response;
 
     /**
      * Update a project.
