@@ -21,12 +21,4 @@ export default class ProjectCollection extends Collection {
             .then(({ data }) => data);
     }
 
-
-    /**
-     * Update a project.
-     */
-    public update(data: Update.input): Promise<Update.response> {
-        return this.client.put(`/projects/${data.project_id}`, data)
-            .then(({ data }) => data);
-    }
 }
