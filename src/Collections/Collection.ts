@@ -1,12 +1,12 @@
 import XsollaClient from '../XsollaClient';
-import Model from '../Models/Model';
+import Model, { ModelData } from '../Models/Model';
 
-export default abstract class Collection {
+export default abstract class Collection<T extends Model> {
 
     /**
      * Model this collection is responsible for.
      */
-    protected abstract model: Model;
+    protected abstract model: new(data: ModelData, client: XsollaClient) => T;
 
     /**
      * Xsolla Client
@@ -20,5 +20,11 @@ export default abstract class Collection {
         this.client = client;
     }
 
+    /**
+     * Create model instance using the given data.
+     */
+    protected createModel(data: ModelData) {
+        return new this.model(data, this.client);
+    }
 
 }
