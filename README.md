@@ -23,7 +23,7 @@ const client = new Xsolla({
 
 ##### Create a project:
 ```js
-client.project.create({
+client.projects.create({
     name: ["My brand new Xsolla project"],
     url: 'https://example.com',
 }).then((project) => console.log('Created new project', project));
