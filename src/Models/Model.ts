@@ -20,4 +20,11 @@ export default abstract class Model {
         this.client = client;
     }
 
+    /**
+     * Update self with the given data.
+     */
+    protected renew(data: any = {}) {
+        this.data = { ...this.data, ...data };
+    }
+
 }
