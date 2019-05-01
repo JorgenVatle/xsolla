@@ -58,7 +58,35 @@ interface UserOptional {
     /**
      * Traffic attributes.
      */
-    utm: UserUTM;
+    utm: {
+
+        /**
+         * Traffic source.
+         */
+        utm_source: string;
+
+        /**
+         * Traffic channel (contextual ads, media ads, email lists, etc.).
+         */
+        utm_medium: string;
+
+        /**
+         * Campaign title, transliterated or translated to English.
+         */
+        utm_campaign: string;
+
+        /**
+         * Campaign keyword. If set, statistics will be based on the keywords used for ad targeting rather than on specific
+         * search queries. In Google Analytics, the specified 'utm_term' is part of the general search terms report.
+         */
+        utm_term: string;
+
+        /**
+         * Campaign content.
+         */
+        utm_content: string;
+
+    };
 }
 
 interface UserLegal {
@@ -105,34 +133,6 @@ interface UserCountry extends ValueObject {
 
 interface UserAttributes {
     [key: string]: string;
-}
-
-interface UserUTM {
-    /**
-     * Traffic source.
-     */
-    utm_source: string;
-
-    /**
-     * Traffic channel (contextual ads, media ads, email lists, etc.).
-     */
-    utm_medium: string;
-
-    /**
-     * Campaign title, transliterated or translated to English.
-     */
-    utm_campaign: string;
-
-    /**
-     * Campaign keyword. If set, statistics will be based on the keywords used for ad targeting rather than on specific
-     * search queries. In Google Analytics, the specified 'utm_term' is part of the general search terms report.
-     */
-    utm_term: string;
-
-    /**
-     * Campaign content.
-     */
-    utm_content: string;
 }
 
 export type User = UserRequired & Partial<UserOptional> & UserLegal;
