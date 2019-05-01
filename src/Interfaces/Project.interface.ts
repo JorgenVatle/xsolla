@@ -164,7 +164,14 @@ export module Get {
 
     }
 
-    export interface response extends Create.input {}
+    export interface response extends Create.input {
+
+        /**
+         * Project ID
+         */
+        project_id: XsollaID;
+
+    }
 
 }
 
