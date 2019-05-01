@@ -1,6 +1,6 @@
 {
   "name": "xsolla",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Node.js client for working with the Xsolla Merchant API",
   "main": "dist/Xsolla.js",
   "types": "src/Xsolla.ts",
