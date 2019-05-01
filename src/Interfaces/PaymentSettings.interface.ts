@@ -50,4 +50,42 @@ export default interface PaymentSettings  {
      */
     payment_widget: string;
 
+    /**
+     * Interface settings
+     *
+     * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings_ui
+     */
+    ui: {
+
+        /**
+         * Payment UI theme.
+         */
+        theme: 'default' | 'default_dark';
+
+        /**
+         * Payment UI size.
+         */
+        size:
+            /**
+             * The least possible size of the payment UI. Use this value when the window size is strictly limited
+             * (dimensions: 620 x 630)
+             */
+            'small'
+
+            /**
+             * Recommended size. Use this value to display the payment UI in a lightbox (dimensions: 740 x 760)
+             */
+            | 'medium'
+
+            /**
+             * The optimal size for displaying the payment UI in a new window or tab (dimensions: 820 x 840)
+             */
+            | 'large';
+
+        /**
+         * Device type.
+         */
+        version: 'desktop' | 'mobile';
+
+    }
 }
