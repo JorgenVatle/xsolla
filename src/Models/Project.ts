@@ -1,5 +1,5 @@
 import Model from './Model';
-import { Update } from '../Interfaces/Project.interface';
+import { CreateToken, Update } from '../Interfaces/Project.interface';
 
 export default class Project extends Model {
 
@@ -11,4 +11,14 @@ export default class Project extends Model {
             .then(({ data }) => this.renew(data));
     }
 
+    /**
+     * Create a payment token for the current project.
+     */
+    public createPaymentToken(data: CreateToken.input): Promise<CreateToken.response> {
+
+        data.settings.project_id = this.data.project_id;
+
+        return this.client.post(`/merchants/${this.client.merchantId}/token`)
+            .then(({ data }) => data);
+    }
 }
