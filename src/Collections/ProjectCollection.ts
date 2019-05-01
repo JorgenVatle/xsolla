@@ -1,13 +1,13 @@
 import { Create, Get, Update } from '../Interfaces/Project.interface';
-import Xsolla from '../Xsolla';
+import Collection from './Collection';
 
-export default class ProjectCollection extends Xsolla {
+export default class ProjectCollection extends Collection {
 
     /**
      * Create a project.
      */
     public create(data: Create.input): Promise<Create.response> {
-        return this.client.post(`/merchants/${data.merchant_id || this.credentials.merchantId}/projects`,{
+        return this.client.post(`/merchants/${data.merchant_id || this.client.merchantId}/projects`,{
             method: 'POST',
             data,
         }).then(({ data }) => data);
