@@ -94,7 +94,7 @@ interface Purchase {
         /**
          * Object with upgrade data.
          */
-        upgrade: {
+        upgrade?: {
 
             /**
              * Upgrade ID
