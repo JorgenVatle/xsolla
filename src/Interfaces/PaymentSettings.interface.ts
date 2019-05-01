@@ -72,6 +72,12 @@ export default interface PaymentSettings  {
          */
         license_url: string;
 
+        /**
+         * Interface mode in Pay Station. Can be 'user_account' only: The header contains only the account navigation
+         * menu, and the user cannot select a product or make a payment. This mode is only available on the desktop.
+         */
+        mode?: 'user_account';
+
 
         /**
          * Payment UI size.
