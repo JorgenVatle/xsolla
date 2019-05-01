@@ -89,6 +89,15 @@ export default interface PaymentSettings  {
 
     }
 
+    header: {
+
+        /**
+         * Whether or not this element can be hidden on Payment UI. 'true' by default.
+         */
+        visible_virtual_currency_balance: boolean;
+
+    }
+
     /**
      * Interface settings for the desktop version.
      */
@@ -186,11 +195,6 @@ export default interface PaymentSettings  {
              * the button. 'false' by default.
              */
             button_with_price: boolean;
-
-            /**
-             * Whether or not this element can be hidden on Payment UI. 'true' by default.
-             */
-            virtual_currency_balance: boolean;
 
         }
     }
