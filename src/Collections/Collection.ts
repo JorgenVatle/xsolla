@@ -27,4 +27,11 @@ export default abstract class Collection<T extends Model> {
         return new this.model(data, this.client);
     }
 
+    /**
+     * Create list of models.
+     */
+    protected createModelList(data: ModelData[]) {
+        return data.map((data) => this.createModel(data));
+    }
+
 }
