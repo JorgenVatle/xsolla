@@ -28,6 +28,13 @@ export default class XsollaClient {
     }
 
     /**
+     * Merchant ID for the current client.
+     */
+    public get merchantId() {
+        return this.credentials.merchantId;
+    }
+
+    /**
      * Client get() method.
      */
     public get get() {
