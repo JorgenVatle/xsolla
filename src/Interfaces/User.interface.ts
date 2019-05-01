@@ -89,7 +89,7 @@ interface UserOptional {
     };
 }
 
-interface UserLegal {
+interface UserLegal extends UserRequired {
     /**
      * Whether the user is a legal entity.
      */
@@ -141,4 +141,4 @@ interface UserAttributes {
     [key: string]: string;
 }
 
-export type User = UserRequired & Partial<UserOptional> & UserLegal;
+export type User = (UserRequired | UserLegal) & Partial<UserOptional>;
