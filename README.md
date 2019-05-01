@@ -1,7 +1,7 @@
 # Xsolla Node Client
 
-A Node.js client for the Xsolla Publisher API. Written in TypeScript to provide you with all the type checking and 
-auto-completion convenience supported by most modern JS IDEs. 👌
+A Node.js client for the [Xsolla API](https://developers.xsolla.com/api/). Written in TypeScript to provide you with
+all the type checking and auto-completion convenience supported by most modern JS IDEs. 👌
 
 ## Installation
 Pull in the package with npm:
