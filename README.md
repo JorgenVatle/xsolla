@@ -40,7 +40,6 @@ const { token } = await project.createPaymentToken({
     user: {
         id: {
             value: '47',
-            hidden: true,
         }
     },
     
