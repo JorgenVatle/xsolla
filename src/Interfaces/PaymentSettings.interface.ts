@@ -5,7 +5,7 @@ import { XsollaID } from './Xsolla.interface';
  *
  * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings
  */
-export default interface PaymentSettings  {
+interface Settings  {
 
     /**
      * Transaction's external ID.
@@ -358,3 +358,7 @@ interface UserAccountSubmenu {
     enable: boolean;
 
 }
+
+type PaymentSettings = Partial<Settings>;
+
+export default PaymentSettings;
