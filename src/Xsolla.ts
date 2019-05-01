@@ -1,4 +1,4 @@
-import { XsollaMerchantCredentials } from './Xsolla.interface';
+import { XsollaMerchantCredentials } from './Interfaces/Xsolla.interface';
 import Axios, { AxiosInstance } from 'axios';
 import ProjectCollection from './Collections/ProjectCollection';
 
