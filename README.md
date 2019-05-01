@@ -21,40 +21,58 @@ const client = new Xsolla({
 })
 ```
 
-##### Create a project:
+### The Xsolla instance
+The root Xsolla instance `client` provides you with a list of properties that can be used to interact with Xsolla's 
+different modules.
+
+#### Create a project
 ```js
 client.projects.create({
     name: ["My brand new Xsolla project"],
     url: 'https://example.com',
 }).then((project) => console.log('Created new project', project));
 ```
+Returns a promise for a [`Project`](#the-project-model) model.
 
-##### Get a project:
+#### Get a project:
 ```js
-const project = await client.project.get({ project_id: 123456 })
+const project = await client.projects.get({ project_id: 123456 })
 ```
+Returns a promise for a [Project](#the-project-model) model.
 
-##### Create a payment token:
+#### Fetch all projects
 ```js
-const { token } = await project.createPaymentToken({
-    user: {
-        id: {
-            value: '47',
-        }
-    },
+const projects = client.projects.all();
+```
+Returns a promise for an array of [Project](#the-project-model) models.
+
+### The Project Model
+The Project model is an instance of a project that you've either [created](#create-a-project) or
+ [fetched (get)](#get-a-project)
+ 
+#### Create a payment token:
+You can create payment tokens directly from a Project model. 
+(Obtained by either `Xsolla.projects.get()` or `Xsolla.projects.create()`)
+ ```js
+ const { token } = await project.createPaymentToken({
+     user: {
+         id: {
+             value: '47',
+         }
+     },
+     
+     settings: {
+         mode: 'sandbox',
+     },
     
-    settings: {
-        mode: 'sandbox',
-    },
-   
-    purchase: {
-        checkout: {
-            amount: 13.37,
-            currency: 'USD',
-        }
-    }
-});
-```
+     purchase: {
+         checkout: {
+             amount: 13.37,
+             currency: 'USD',
+         }
+     }
+ });
+ ```
 
 ## License
 This repository is licensed under the ISC license.
