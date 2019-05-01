@@ -1,3 +1,8 @@
+import { User } from './User.interface';
+import { XsollaID } from './Xsolla.interface';
+import PaymentSettings from './PaymentSettings.interface';
+import PaymentPurchase from './PaymentPurchase.interface';
+
 interface PaymentModule {
 
     /**
@@ -11,6 +16,7 @@ interface PaymentModule {
     custom_name: string[];
 
 }
+
 /**
  * Create a project.
  *
@@ -180,4 +186,39 @@ export module Update {
 
     export type response = undefined;
 
+}
+
+/**
+ * Create a payment token
+ *
+ * @link https://developers.xsolla.com/api/v2/getting-started/#api_token_ui
+ */
+export module CreateToken {
+
+    export interface input {
+        /**
+         * User details
+         *
+         * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_user
+         */
+        user: User,
+
+        /**
+         * Payment settings.
+         *
+         * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings
+         */
+        settings: PaymentSettings;
+
+        /**
+         * Purchase details.
+         *
+         * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_purchase
+         */
+        purchase: PaymentPurchase;
+    }
+
+    export interface response {
+        token: string;
+    }
 }
