@@ -23,7 +23,7 @@ export default abstract class Collection<T extends Model> {
     /**
      * Create model instance using the given data.
      */
-    protected createModel(data: ModelData) {
+    protected createModel(data: ModelData): T {
         return new this.model(data, this.client);
     }
 
