@@ -17,7 +17,7 @@ export default class ProjectCollection extends Collection<Project> {
         return this.client.post(`/merchants/${data.merchant_id || this.client.merchantId}/projects`,{
             method: 'POST',
             data,
-        }).then(({ data }) => this.createModel(data));
+        }).then(({ data }) => this.get({ project_id: data.id }));
     }
 
     /**
