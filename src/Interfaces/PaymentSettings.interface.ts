@@ -231,5 +231,78 @@ export default interface PaymentSettings  {
             }
         }
 
+        /**
+         * Menu settings.
+         *
+         * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings_ui_components
+         */
+        components: {
+
+            /**
+             * Virtual items submenu.
+             */
+            virtual_items: {
+
+                /**
+                 * Position of the submenu in the menu.
+                 */
+                order: number;
+
+                /**
+                 * Whether to show the submenu.
+                 */
+                hidden: boolean;
+
+                /**
+                 * Group to show after opening the virtual items tab.
+                 */
+                selected_group: string;
+
+                /**
+                 * Item to show after opening the virtual items tab (item SKU).
+                 */
+                selected_item: string;
+
+            }
+
+            /**
+             * Virtual currency submenu.
+             */
+            virtual_currency: {
+
+                /**
+                 * Whether the user can enter an arbitrary quantity of the virtual currency in the payment UI.
+                 */
+                custom_amount: boolean;
+
+                /**
+                 * Position of the submenu in the menu.
+                 */
+                order: number;
+
+                /**
+                 * Whether to show the submenu.
+                 */
+                hidden: boolean;
+
+            }
+
+            /**
+             * Subscription plans submenu.
+             */
+            subscriptions: {
+
+                /**
+                 * Position of the submenu in the menu.
+                 */
+                order: number;
+
+                /**
+                 * Whether to show the submenu.
+                 */
+                hidden: boolean;
+
+            }
+        }
     }
 }
