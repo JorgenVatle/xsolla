@@ -21,9 +21,9 @@ const client = new Xsolla({
 })
 ```
 
-### The Xsolla instance
-The root Xsolla instance `client` provides you with a list of properties that can be used to interact with Xsolla's 
-different modules.
+### Projects
+The Xsolla client exposes a `projects` property that can be used to create, update and read projects attached to your
+merchant account. 
 
 #### Create a project
 ```js
@@ -38,17 +38,17 @@ Returns a promise for a [`Project`](#the-project-model) model.
 ```js
 const project = await client.projects.get({ project_id: 123456 })
 ```
-Returns a promise for a [Project](#the-project-model) model.
+Returns a promise for a [`Project`](#the-project-model) model.
 
 #### Fetch all projects
 ```js
 const projects = client.projects.all();
 ```
-Returns a promise for an array of [Project](#the-project-model) models.
+Returns a promise for an array of [`Project`](#the-project-model) models.
 
 ### The Project Model
 The Project model is an instance of a project that you've either [created](#create-a-project) or
- [fetched (get)](#get-a-project)
+ [fetched](#get-a-project)
  
 #### Create a payment token:
 You can create payment tokens directly from a Project model. 
