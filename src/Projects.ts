@@ -1,7 +1,7 @@
 import { Create, Get, Update } from './Project.interface';
 import Xsolla from './Xsolla';
 
-export default class Project extends Xsolla {
+export default class Projects extends Xsolla {
 
     /**
      * Create a project.
