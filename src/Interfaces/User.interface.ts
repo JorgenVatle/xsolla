@@ -131,6 +131,9 @@ interface UserCountry extends ValueObject {
 
 }
 
+/**
+ * User attributes for filtering the item list, represented as a valid JSON set of key-value pairs.
+ */
 interface UserAttributes {
     [key: string]: string;
 }
