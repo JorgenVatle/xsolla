@@ -31,7 +31,7 @@ client.project.create({
 
 ##### Get a project:
 ```js
-project = await client.project.get({ project_id: 123456 })
+const project = await client.project.get({ project_id: 123456 })
 ```
 
 ##### Create a payment token:
