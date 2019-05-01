@@ -3,7 +3,7 @@
  *
  * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_purchase
  */
-export default interface PaymentPurchase {
+interface Purchase {
 
     /**
      * Object containing virtual currency details.
@@ -244,3 +244,7 @@ interface GiftFriend {
     email: string;
 
 }
+
+type PaymentPurchase = Partial<Purchase>;
+
+export default PaymentPurchase;
