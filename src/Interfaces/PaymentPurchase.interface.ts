@@ -127,7 +127,7 @@ interface Purchase {
         /**
          * Purchase description.
          */
-        description: {
+        description?: {
 
             /**
              * Purchase description to include in the UI and email receipts.
