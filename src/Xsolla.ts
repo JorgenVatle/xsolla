@@ -5,11 +5,6 @@ import XsollaClient from './XsollaClient';
 export default class Xsolla {
 
     /**
-     * Xsolla merchant credentials.
-     */
-    protected readonly credentials: XsollaMerchantCredentials;
-
-    /**
      * REST client
      */
     protected readonly client: XsollaClient;
@@ -18,7 +13,6 @@ export default class Xsolla {
      * Xsolla constructor
      */
     public constructor(credentials: XsollaMerchantCredentials) {
-        this.credentials = credentials;
         this.client = new XsollaClient(credentials);
     }
 
@@ -26,7 +20,7 @@ export default class Xsolla {
      * Xsolla Project instance.
      */
     public get projects() {
-        return new ProjectCollection(this.credentials);
+        return new ProjectCollection(this.client);
     }
 
 }
