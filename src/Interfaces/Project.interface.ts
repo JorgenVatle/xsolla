@@ -208,7 +208,7 @@ export module CreateToken {
          *
          * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings
          */
-        settings: PaymentSettings;
+        settings?: PaymentSettings;
 
         /**
          * Purchase details.
