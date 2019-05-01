@@ -87,142 +87,142 @@ export default interface PaymentSettings  {
          */
         version: 'desktop' | 'mobile';
 
-    }
-
-    header: {
-
-        /**
-         * Whether or not this element can be hidden on Payment UI. 'true' by default.
-         */
-        visible_virtual_currency_balance: boolean;
-
-    }
-
-    /**
-     * Interface settings for the desktop version.
-     */
-    desktop: {
-
-        /**
-         * Header settings.
-         */
         header: {
 
             /**
-             * Whether to show the header in the payment UI.
+             * Whether or not this element can be hidden on Payment UI. 'true' by default.
              */
-            is_visible: boolean;
-
-            /**
-             * If 'true', the header will show your logo (please first provide the image to your account manager).
-             */
-            visible_logo: boolean;
-
-            /**
-             * Whether to show the project name in the header.
-             */
-            visible_name: boolean;
-
-            /**
-             * Whether to show the purchase description (purchase.description.value) in the header. ‘true’ by
-             * default.
-             */
-            visible_purchase: boolean;
-
-            /**
-             * How to show the header. Can be 'compact' (hides project name and user ID) or 'normal' (default).
-             */
-            type: 'compact' | 'normal';
-
-            /**
-             * Whether to show a Close button in Pay Station desktop. The button closes Pay Station and redirects
-             * the user to the URL specified in the "settings.return_url" parameter. 'false' by default.
-             */
-            close_button: boolean;
+            visible_virtual_currency_balance: boolean;
 
         }
-
-        subscription_list: {
-
-            /**
-             * List template. Can be 'list' (default) or 'grid'.
-             */
-            layout: 'list' | 'grid';
-
-            /**
-             * Any text to show above the list of available subscription plans in the payment UI.
-             */
-            description: string;
-
-            /**
-             * If 'true', and if the user's local currency is different from the one set for the subscription plan,
-             * the user will be able to see both prices: one in the local and one in the basic currency.
-             */
-            display_local_price: boolean;
-
-        }
-
-        virtual_item_list: {
-
-            /**
-             * List template. Can be 'list' (default) or 'grid'.
-             */
-            layout: 'list' | 'grid';
-
-            /**
-             * If 'true', the price will be shown on the button. If 'false', the price will be shown on the left of
-             * the button. 'false' by default.
-             */
-            button_with_price: boolean;
-
-            /**
-             * Display virtual item groups as a vertical/horizontal menu. Can be 'horizontal_navigation' or
-             * 'vertical' (default).
-             */
-            view: 'horizontal_navigation' | 'vertical';
-
-        }
-
-        virtual_currency_list: {
-
-            /**
-             * Any text to show above the list of virtual currencies.
-             */
-            description: string;
-
-            /**
-             * If 'true', the price will be shown on the button. If 'false', the price will be shown on the left of
-             * the button. 'false' by default.
-             */
-            button_with_price: boolean;
-
-        }
-    }
-
-    mobile: {
 
         /**
-         * A user can only pay using their saved payment methods. Can be 'saved_accounts'.
+         * Interface settings for the desktop version.
          */
-        mode?: 'saved_accounts';
-
-        header: {
+        desktop: {
 
             /**
-             * Whether to show a Close button in Pay Station mobile. The button closes Pay Station and redirects the
-             * user to the URL specified in the "settings.return_url" parameter. 'false' by default.
+             * Header settings.
              */
-            close_button: boolean;
+            header: {
 
+                /**
+                 * Whether to show the header in the payment UI.
+                 */
+                is_visible: boolean;
+
+                /**
+                 * If 'true', the header will show your logo (please first provide the image to your account manager).
+                 */
+                visible_logo: boolean;
+
+                /**
+                 * Whether to show the project name in the header.
+                 */
+                visible_name: boolean;
+
+                /**
+                 * Whether to show the purchase description (purchase.description.value) in the header. ‘true’ by
+                 * default.
+                 */
+                visible_purchase: boolean;
+
+                /**
+                 * How to show the header. Can be 'compact' (hides project name and user ID) or 'normal' (default).
+                 */
+                type: 'compact' | 'normal';
+
+                /**
+                 * Whether to show a Close button in Pay Station desktop. The button closes Pay Station and redirects
+                 * the user to the URL specified in the "settings.return_url" parameter. 'false' by default.
+                 */
+                close_button: boolean;
+
+            }
+
+            subscription_list: {
+
+                /**
+                 * List template. Can be 'list' (default) or 'grid'.
+                 */
+                layout: 'list' | 'grid';
+
+                /**
+                 * Any text to show above the list of available subscription plans in the payment UI.
+                 */
+                description: string;
+
+                /**
+                 * If 'true', and if the user's local currency is different from the one set for the subscription plan,
+                 * the user will be able to see both prices: one in the local and one in the basic currency.
+                 */
+                display_local_price: boolean;
+
+            }
+
+            virtual_item_list: {
+
+                /**
+                 * List template. Can be 'list' (default) or 'grid'.
+                 */
+                layout: 'list' | 'grid';
+
+                /**
+                 * If 'true', the price will be shown on the button. If 'false', the price will be shown on the left of
+                 * the button. 'false' by default.
+                 */
+                button_with_price: boolean;
+
+                /**
+                 * Display virtual item groups as a vertical/horizontal menu. Can be 'horizontal_navigation' or
+                 * 'vertical' (default).
+                 */
+                view: 'horizontal_navigation' | 'vertical';
+
+            }
+
+            virtual_currency_list: {
+
+                /**
+                 * Any text to show above the list of virtual currencies.
+                 */
+                description: string;
+
+                /**
+                 * If 'true', the price will be shown on the button. If 'false', the price will be shown on the left of
+                 * the button. 'false' by default.
+                 */
+                button_with_price: boolean;
+
+            }
         }
 
-        footer: {
+        mobile: {
 
             /**
-             * Whether to hide the footer in the mobile version of the payment UI.
+             * A user can only pay using their saved payment methods. Can be 'saved_accounts'.
              */
-            is_visible: boolean;
+            mode?: 'saved_accounts';
 
+            header: {
+
+                /**
+                 * Whether to show a Close button in Pay Station mobile. The button closes Pay Station and redirects the
+                 * user to the URL specified in the "settings.return_url" parameter. 'false' by default.
+                 */
+                close_button: boolean;
+
+            }
+
+            footer: {
+
+                /**
+                 * Whether to hide the footer in the mobile version of the payment UI.
+                 */
+                is_visible: boolean;
+
+            }
         }
+
     }
 }
