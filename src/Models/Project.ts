@@ -1,10 +1,11 @@
 import Model from './Model';
 import { CreateToken, Get, Update } from '../Interfaces/Project.interface';
 
-export default class Project extends Model {
+interface Project {
+    data: Get.response;
+}
 
-    // @ts-ignore
-    protected data: Get.response;
+class Project extends Model {
 
     /**
      * Update a project.
@@ -28,3 +29,5 @@ export default class Project extends Model {
             .then(({ data }) => data);
     }
 }
+
+export default Project;
