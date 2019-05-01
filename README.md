@@ -50,7 +50,7 @@ Returns a promise for an array of [`Project`](#the-project-model) models.
 The Project model is an instance of a project that you've either [created](#create-a-project) or
  [fetched](#get-a-project)
  
-#### Create a payment token:
+#### Create a payment token
 You can create payment tokens directly from a Project model. 
 (Obtained by either `Xsolla.projects.get()` or `Xsolla.projects.create()`)
  ```js
@@ -72,7 +72,16 @@ You can create payment tokens directly from a Project model.
          }
      }
  });
- ```
+```
+
+#### Update a project
+```js
+const updatedProject = await project.update({
+    name: ["Some other Xsolla project name"],
+});
+```
+Returns a promise for an updated [`Project`](#the-project-model) model.
+ 
 
 ## License
 This repository is licensed under the ISC license.
