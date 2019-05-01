@@ -141,4 +141,4 @@ interface UserAttributes {
     [key: string]: string;
 }
 
-export type User = (UserRequired | UserLegal) & Partial<UserOptional>;
+export type User = (UserRequired | Partial<UserLegal>) & Partial<UserOptional>;
