@@ -310,5 +310,46 @@ export default interface PaymentSettings  {
 
             }
         }
+
+        /**
+         * User account details.
+         */
+        user_account: {
+
+            /**
+             * Page 'My account'.
+             */
+            info: UserAccountSubmenu;
+
+            /**
+             * History submenu.
+             */
+            history: UserAccountSubmenu;
+
+            /**
+             * "My payment accounts" submenu.
+             */
+            payment_accounts: UserAccountSubmenu;
+
+            /**
+             * "Manage subscriptions" submenu.
+             */
+            subscriptions: UserAccountSubmenu;
+
+        }
     }
+}
+
+interface UserAccountSubmenu {
+
+    /**
+     * Position of the submenu in the menu.
+     */
+    order: number;
+
+    /**
+     * Whether to show the submenu. 'false' by default.
+     */
+    enable: boolean;
+
 }
