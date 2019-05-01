@@ -198,4 +198,31 @@ export default interface PaymentSettings  {
 
         }
     }
+
+    mobile: {
+
+        /**
+         * A user can only pay using their saved payment methods. Can be 'saved_accounts'.
+         */
+        mode?: 'saved_accounts';
+
+        header: {
+
+            /**
+             * Whether to show a Close button in Pay Station mobile. The button closes Pay Station and redirects the
+             * user to the URL specified in the "settings.return_url" parameter. 'false' by default.
+             */
+            close_button: boolean;
+
+        }
+
+        footer: {
+
+            /**
+             * Whether to hide the footer in the mobile version of the payment UI.
+             */
+            is_visible: boolean;
+
+        }
+    }
 }
