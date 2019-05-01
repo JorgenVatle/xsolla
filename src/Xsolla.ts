@@ -1,6 +1,6 @@
 import { XsollaMerchantCredentials } from './Xsolla.interface';
 import Axios, { AxiosInstance } from 'axios';
-import Projects from './collections/Projects';
+import ProjectCollection from './Collections/ProjectCollection';
 
 export default class Xsolla {
 
@@ -33,7 +33,7 @@ export default class Xsolla {
      * Xsolla Project instance.
      */
     public get projects() {
-        return new Projects(this.credentials);
+        return new ProjectCollection(this.credentials);
     }
 
 }
