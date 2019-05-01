@@ -15,6 +15,9 @@ export default class Project extends Model {
      * Create a payment token for the current project.
      */
     public createPaymentToken(data: CreateToken.input): Promise<CreateToken.response> {
+        if (!data.settings) {
+            data.settings = {};
+        }
 
         data.settings.project_id = this.data.project_id;
 
