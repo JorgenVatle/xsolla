@@ -51,6 +51,11 @@ export default interface PaymentSettings  {
     payment_widget: string;
 
     /**
+     * Whether to display the delivery address form. 'false' by default.
+     */
+    shipping_enabled: boolean;
+
+    /**
      * Interface settings
      *
      * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_settings_ui
