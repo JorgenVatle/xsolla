@@ -122,6 +122,9 @@ interface UserLegal {
     }
 }
 
+/**
+ * User country.
+ */
 interface UserCountry extends ValueObject {
 
     /**
