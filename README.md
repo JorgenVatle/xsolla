@@ -4,7 +4,7 @@ A Node.js client for the Xsolla Publisher API. Written in TypeScript to provide 
 auto-completion convenience supported by most modern JS IDEs. 👌
 
 ## Installation
-Pull in the package with npm or Yarn.
+Pull in the package with npm:
 ```bash
 npm install xsolla
 ```
@@ -23,7 +23,7 @@ const client = new Xsolla({
 
 ##### Create a project:
 ```js
-client.project.create({
+let project = await client.project.create({
     name: ["My brand new Xsolla project"],
     url: 'https://example.com',
 }).then(({ id }) => console.log('Created project with ID:', id));
@@ -31,7 +31,30 @@ client.project.create({
 
 ##### Get a project:
 ```js
-client.project.get({ project_id: 123456 })
+project = await client.project.get({ project_id: 123456 })
+```
+
+##### Create a payment token:
+```js
+const { token } = await project.createPaymentToken({
+    user: {
+        id: {
+            value: '47',
+            hidden: true,
+        }
+    },
+    
+    settings: {
+        mode: 'sandbox',
+    },
+   
+    purchase: {
+        checkout: {
+            amount: 13.37,
+            currency: 'USD',
+        }
+    }
+});
 ```
 
 ## License
