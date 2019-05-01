@@ -1,5 +1,7 @@
 import XsollaClient from '../XsollaClient';
 
+export type ModelData = any;
+
 export default abstract class Model {
 
     /**
@@ -15,7 +17,7 @@ export default abstract class Model {
     /**
      * Model constructor.
      */
-    public constructor(data: any, client: XsollaClient) {
+    public constructor(data: ModelData, client: XsollaClient) {
         this.data = data;
         this.client = client;
     }
@@ -23,7 +25,7 @@ export default abstract class Model {
     /**
      * Update self with the given data.
      */
-    protected renew(data: any = {}) {
+    protected renew(data: ModelData = {}) {
         this.data = { ...this.data, ...data };
         return this;
     }
