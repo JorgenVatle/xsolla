@@ -1,6 +1,7 @@
 import { Create, Get } from '../Interfaces/Project.interface';
 import Collection from './Collection';
 import Project from '../Models/Project';
+import { XsollaID } from '../Interfaces/Xsolla.interface';
 
 export default class ProjectCollection extends Collection<Project> {
 
@@ -25,6 +26,14 @@ export default class ProjectCollection extends Collection<Project> {
     public get(data: Get.input): Promise<Project> {
         return this.client.get(`/projects/${data.project_id}`)
             .then(({ data }) => this.createModel(data));
+    }
+
+    /**
+     * Fetch all projects for the current merchant.
+     */
+    public all(merchantId: XsollaID = this.client.merchantId): Promise<Project[]> {
+        return this.client.get(`/merchant/${merchantId}/projects`)
+            .then(({ data }) => this.createModelList(data));
     }
 
 }
