@@ -2,7 +2,7 @@ import XsollaClient from '../XsollaClient';
 
 export type ModelData = any;
 
-export default abstract class Model<T> {
+export default abstract class Model {
 
     /**
      * Xsolla Client
