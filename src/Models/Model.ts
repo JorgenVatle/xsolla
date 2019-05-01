@@ -25,6 +25,7 @@ export default abstract class Model {
      */
     protected renew(data: any = {}) {
         this.data = { ...this.data, ...data };
+        return this;
     }
 
 }
