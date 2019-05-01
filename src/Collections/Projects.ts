@@ -1,5 +1,5 @@
 import { Create, Get, Update } from './Project.interface';
-import Xsolla from './Xsolla';
+import Xsolla from '../Xsolla';
 
 export default class Projects extends Xsolla {
 

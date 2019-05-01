@@ -1,6 +1,6 @@
 import { XsollaMerchantCredentials } from './Xsolla.interface';
 import Axios, { AxiosInstance } from 'axios';
-import Projects from './Projects';
+import Projects from './collections/Projects';
 
 export default class Xsolla {
 
