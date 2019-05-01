@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Node.js client for working with the Xsolla Merchant API",
   "main": "dist/Xsolla.js",
+  "types": "src/Xsolla.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
