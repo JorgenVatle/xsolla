@@ -28,6 +28,20 @@ class Project extends Model {
         return this.client.post(`/merchants/${this.client.merchantId}/token`)
             .then(({ data }) => data);
     }
+
+    /**
+     * Create payment URL for the given payment data.
+     */
+    public async createPaymentUrl(data: CreateToken.input): Promise<string> {
+        const { token } = await this.createPaymentToken(data);
+        let baseUrl = 'https://secure.xsolla.com/paystation2/';
+
+        if (data.settings && data.settings.mode === 'sandbox') {
+            baseUrl = 'https://sandbox-secure.xsolla.com/paystation2/';
+        }
+
+        return `${baseUrl}?access_token=${token}`;
+    }
 }
 
 export default Project;
