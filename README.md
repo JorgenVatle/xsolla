@@ -74,6 +74,28 @@ You can create payment tokens directly from a Project model.
  });
 ```
 
+#### Create a payment link
+```js
+const url = await project.createPaymentUrl({
+    user: {
+         id: {
+             value: '47',
+         }
+     },
+     
+     settings: {
+         mode: 'sandbox',
+     },
+    
+     purchase: {
+         checkout: {
+             amount: 13.37,
+             currency: 'USD',
+         }
+     }
+});
+```
+
 #### Update a project
 ```js
 const updatedProject = await project.update({
