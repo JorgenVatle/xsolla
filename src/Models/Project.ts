@@ -1,5 +1,6 @@
 import Model from './Model';
 import { CreateToken, Get, Update } from '../Interfaces/Project.interface';
+import InvalidSignatureException from '../Exception/InvalidSignatureException';
 import Hash from '../Utility/Hash';
 
 interface Project {
@@ -49,6 +50,19 @@ class Project extends Model {
         }
 
         return `${baseUrl}?access_token=${token}`;
+    }
+
+    /**
+     * Validate an incoming webhook request.
+     */
+    public validateWebhookRequest(requestSignature: string, rawRequestBody: string): void {
+        if (!requestSignature) {
+            throw new InvalidSignatureException('No signature provided!');
+        }
+
+        if (requestSignature !== this.sign(rawRequestBody)) {
+            throw new InvalidSignatureException;
+        }
     }
 }
 
