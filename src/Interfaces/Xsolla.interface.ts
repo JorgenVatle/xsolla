@@ -50,3 +50,10 @@ export interface CurrencyAndAmount {
     amount: number;
     currency: string;
 }
+
+/**
+ * Custom parameters as passed by the merchant.
+ */
+export interface CustomParameters {
+    [key: string]: any;
+}
