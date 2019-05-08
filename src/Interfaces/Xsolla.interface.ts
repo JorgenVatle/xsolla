@@ -42,3 +42,11 @@ export type XsollaID = number;
  * will be chosen by the user in the payment UI.
  */
 export type DRM = 'steam' | 'playstation' | 'xbox' | 'uplay' | 'origin' | 'drmfree';
+
+/**
+ * Currency and amount of a transaction.
+ */
+export interface CurrencyAndAmount {
+    amount: number;
+    currency: string;
+}
