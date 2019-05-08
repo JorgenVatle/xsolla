@@ -2,7 +2,7 @@
   "name": "xsolla",
   "version": "0.3.1",
   "description": "A Node.js client for working with the Xsolla Merchant API",
-  "main": "dist/Xsolla.js",
+  "main": "dist/src/Xsolla.js",
   "types": "src/Xsolla.ts",
   "scripts": {
     "test": "tsc",
