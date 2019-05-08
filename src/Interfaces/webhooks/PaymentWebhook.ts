@@ -86,7 +86,9 @@ export default interface PaymentWebhook {
         }
     }
 
-    user: UserValidationWebhook['user']
+    user: UserValidationWebhook['user'] & {
+        zip: string;
+    }
 
     transaction: {
         id: number;
