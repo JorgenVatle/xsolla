@@ -60,6 +60,10 @@ class Project extends Model {
             throw new InvalidSignatureException('No signature provided!');
         }
 
+        if (typeof requestSignature !== 'string') {
+            throw new InvalidSignatureException('Signature is not string! (Likely developer error)')
+        }
+
         if (requestSignature !== this.sign(rawRequestBody)) {
             throw new InvalidSignatureException;
         }
