@@ -64,7 +64,7 @@ class Project extends Model {
             throw new InvalidSignatureException('Signature is not string! (Likely developer error)')
         }
 
-        if (requestSignature !== this.sign(rawRequestBody)) {
+        if (requestSignature.replace(/signature/i, '').trim() !== this.sign(rawRequestBody)) {
             throw new InvalidSignatureException;
         }
     }
