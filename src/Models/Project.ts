@@ -1,11 +1,19 @@
 import Model from './Model';
 import { CreateToken, Get, Update } from '../Interfaces/Project.interface';
+import Hash from '../Utility/Hash';
 
 interface Project {
     data: Get.response;
 }
 
 class Project extends Model {
+
+    /**
+     * Create a signature for the given input.
+     */
+    protected sign(input: string) {
+        return Hash('sha1', input + this.data.key);
+    }
 
     /**
      * Update a project.
