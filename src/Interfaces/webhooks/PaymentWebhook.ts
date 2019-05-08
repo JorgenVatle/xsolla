@@ -10,7 +10,7 @@ export default interface PaymentWebhook {
 
     notification_type: 'payment';
 
-    purchase: {
+    purchase?: Partial<{
 
         virtual_currency: {
             name: string;
@@ -84,9 +84,9 @@ export default interface PaymentWebhook {
             coupon_code: string;
             campaign_code: string;
         }
-    }
+    }>
 
-    user: UserValidationWebhook['user'] & {
+    user?: UserValidationWebhook['user'] & {
         zip: string;
     }
 
@@ -111,5 +111,5 @@ export default interface PaymentWebhook {
         repatriation_commission: CurrencyAndAmount;
     }
 
-    custom_parameters: CustomParameters;
+    custom_parameters?: CustomParameters;
 }
