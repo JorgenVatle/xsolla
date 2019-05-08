@@ -82,7 +82,7 @@ export default interface PaymentWebhook {
     }>
 
     user: UserValidationWebhook['user'] & {
-        zip: string;
+        zip?: string;
     }
 
     transaction: {
