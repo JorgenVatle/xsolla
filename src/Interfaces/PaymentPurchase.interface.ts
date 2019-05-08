@@ -3,6 +3,8 @@
  *
  * @link https://developers.xsolla.com/api/v2/getting-started/#api_param_payment_ui_get_token_purchase
  */
+import { DRM } from './Xsolla.interface';
+
 interface Purchase {
 
     /**
@@ -222,7 +224,7 @@ interface GameKey {
      * Make sure to have configured the required DRM platforms in your Publisher Account. If not passed in the token,
      * will be chosen by the user in the payment UI.
      */
-    drm: 'steam' | 'playstation' | 'xbox' | 'uplay' | 'origin' | 'drmfree';
+    drm: DRM;
 
 }
 
