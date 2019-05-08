@@ -35,3 +35,10 @@ export interface XsollaProjectCredentials {
  * Type used for Xsolla IDs
  */
 export type XsollaID = number;
+
+/**
+ * DRM platform used to distribute the game. Can be 'steam', 'playstation', 'xbox', 'uplay', 'origin', or 'drmfree'.
+ * Make sure to have configured the required DRM platforms in your Publisher Account. If not passed in the token,
+ * will be chosen by the user in the payment UI.
+ */
+export type DRM = 'steam' | 'playstation' | 'xbox' | 'uplay' | 'origin' | 'drmfree';
