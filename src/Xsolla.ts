@@ -1,6 +1,9 @@
 import { XsollaMerchantCredentials } from './Interfaces/Xsolla.interface';
 import ProjectCollection from './Collections/ProjectCollection';
 import XsollaClient from './XsollaClient';
+import UserValidationWebhook from './Interfaces/webhooks/UserValidationWebhook';
+import RefundWebhook from './Interfaces/webhooks/RefundWebhook';
+import PaymentWebhook from './Interfaces/webhooks/PaymentWebhook';
 
 export default class Xsolla {
 
@@ -23,4 +26,10 @@ export default class Xsolla {
         return new ProjectCollection(this.client);
     }
 
+}
+
+export {
+    PaymentWebhook,
+    RefundWebhook,
+    UserValidationWebhook,
 }
