@@ -20,10 +20,7 @@ export default interface PaymentWebhook {
             amount: number;
         }
 
-        checkout: {
-            currency: string;
-            amount: number;
-        }
+        checkout: CurrencyAndAmount;
 
         subscription: {
             plan_id: string;
@@ -35,13 +32,11 @@ export default interface PaymentWebhook {
             amount: number;
         }
 
-        virtual_items: {
+        virtual_items: CurrencyAndAmount & {
             items: {
                 sku: string;
                 amount: number;
             }[]
-            currency: string;
-            amount: number;
         }
 
         pin_codes: {
