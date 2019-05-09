@@ -5,7 +5,7 @@ export default abstract class XsollaException extends Error {
     /**
      * Xsolla Error Code
      */
-    public abstract readonly code: XsollaExceptionCode;
+    public abstract readonly name: XsollaExceptionCode;
 
     /**
      * User friendly error message.
@@ -22,7 +22,7 @@ export default abstract class XsollaException extends Error {
      */
     public jsonResponse() {
         return {
-            code: this.code,
+            code: this.name,
             message: this.message,
         }
     }

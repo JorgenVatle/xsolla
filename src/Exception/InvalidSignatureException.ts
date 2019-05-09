@@ -5,8 +5,7 @@ export default class InvalidSignatureException extends XsollaException {
     /**
      * Xsolla Exception Code.
      */
-    public code: XsollaExceptionCode = 'INVALID_SIGNATURE';
-
+    public name: XsollaExceptionCode = 'INVALID_SIGNATURE';
 
     /**
      * Error message.
