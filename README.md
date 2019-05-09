@@ -103,6 +103,20 @@ const updatedProject = await project.update({
 });
 ```
 Returns a promise for an updated [`Project`](#the-project-model) model.
+
+#### Validate an incoming webhook
+```js
+app.post('/webhooks/xsolla', (req, res) => {
+    try {
+        project.validateWebhookRequest(req.getHeader('authorization'), req.rawBody);   
+    } catch (xsollaException) {
+        res.send(xsollaException.jsonResponse());
+        res.status(403).end();
+    }
+});
+```
+Project's [`validateWebhookRequest()`](/src/Models/Project.ts#L58) method throws an 
+[`XsollaException`](/src/Exception/XsollaException.ts) for unauthorized requests.
  
 
 ## License
