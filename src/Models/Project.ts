@@ -12,7 +12,7 @@ class Project extends Model {
     /**
      * Create a signature for the given input.
      */
-    protected sign(input: string) {
+    public sign(input: string) {
         return Hash('sha1', input + this.data.key);
     }
 
