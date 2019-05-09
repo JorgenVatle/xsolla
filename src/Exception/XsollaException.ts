@@ -5,17 +5,17 @@ export default abstract class XsollaException extends Error {
     /**
      * Xsolla Error Code
      */
-    public abstract code: XsollaExceptionCode;
+    public abstract readonly code: XsollaExceptionCode;
 
     /**
      * User friendly error message.
      */
-    public abstract message: string;
+    public abstract readonly message: string;
 
     /**
      * HTTP response code for Xsolla exception.
      */
-    public abstract httpResponseCode: number;
+    public abstract readonly httpResponseCode: number;
 
     /**
      * Response to be given to an incoming Xsolla Webhook request.
