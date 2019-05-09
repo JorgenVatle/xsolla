@@ -111,7 +111,7 @@ app.post('/webhooks/xsolla', (req, res) => {
         project.validateWebhookRequest(req.getHeader('authorization'), req.rawBody);   
     } catch (xsollaException) {
         res.send(xsollaException.jsonResponse());
-        res.status(403).end();
+        res.status(xsollaException.httpResponseCode).end();
     }
 });
 ```
