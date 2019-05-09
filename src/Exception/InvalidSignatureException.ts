@@ -13,4 +13,9 @@ export default class InvalidSignatureException extends XsollaException {
      */
     public message = 'Invalid signature.';
 
+    /**
+     * HTTP response code for this exception.
+     */
+    public httpResponseCode = 403;
+
 }
