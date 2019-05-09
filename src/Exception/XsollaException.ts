@@ -12,4 +12,14 @@ export default abstract class XsollaException extends Error {
      */
     public abstract message: string;
 
+    /**
+     * Response to be given to an incoming Xsolla Webhook request.
+     */
+    public jsonResponse() {
+        return {
+            code: this.code,
+            message: this.message,
+        }
+    }
+
 }
