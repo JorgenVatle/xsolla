@@ -169,7 +169,7 @@ export module Get {
         /**
          * Project ID
          */
-        project_id: XsollaID;
+        id: XsollaID;
 
     }
 

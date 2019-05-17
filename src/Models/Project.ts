@@ -32,7 +32,7 @@ class Project extends Model {
             data.settings = {};
         }
 
-        data.settings.project_id = this.data.project_id;
+        data.settings.project_id = this.data.id;
 
         return this.client.post(`/merchants/${this.client.merchantId}/token`, data)
             .then(({ data }) => data);
