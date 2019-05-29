@@ -13,7 +13,7 @@ npm install xsolla
 
 Initialize Xsolla:
 ```js
-const Xsolla = require('xsolla');
+const Xsolla = require('xsolla').default;
 
 const client = new Xsolla({
     merchantId: 123456,
